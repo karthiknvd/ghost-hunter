@@ -1,7 +1,6 @@
 # 👻 GHOST HUNTER — Spectral Arcade Experience
 
 [![Project Status: Active](https://img.shields.io/badge/Project%20Status-Active-brightgreen.svg)](https://ghost-hunter.vercel.app)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/karthiknvd/ghost-hunter/blob/main/LICENSE)
 [![Technology: Vanilla JS](https://img.shields.io/badge/Technology-Vanilla%20JS-F7DF1E.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Vibe: Cyber-Ethereal](https://img.shields.io/badge/Vibe-Cyber--Ethereal-cyan.svg)](#)
 
@@ -62,7 +61,7 @@ No heavy frameworks. No bulky dependencies. Pure web performance.
    ```
 
 3. **Hunt the Ghosts**
-   Open `http://localhost:8000` in your favorite modern browser (Chrome/Edge recommended).
+   Open **[ghost-hunter.vercel.app](https://ghost-hunter.vercel.app)** in your favorite modern browser (Chrome/Edge recommended).
 
 ---
 
@@ -84,11 +83,6 @@ ghost-hunter/
 ├── game.js      # Core Engine: Canvas render, Physics, & Audio Synthesis
 └── README.md    # You are here!
 ```
-
----
-
-## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
