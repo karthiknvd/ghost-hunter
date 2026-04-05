@@ -50,6 +50,28 @@ No two hits feel the same.
 
 ---
 
+## 🎧 Audio Engine Deep-Dive
+
+The audio in Ghost Hunter is **100% synthesized in real-time**. I did not use static MP3 samples for combat.
+- **Blade Loop**: A continuous speed-sensitive oscillator that shifts in pitch and volume based on your mouse velocity.
+- **Thematic Synthesis**: The `getBladeAudioProfile` function defines the "soul" of each blade, manipulating oscillator types, resonance (Q), and gain envelopes on the fly.
+- **Autoplay Handling**: Implements a global "Unlock Audio" listener to comply with modern browser security while ensuring a seamless experience.
+
+---
+
+## 📂 Project Structure
+
+```text
+ghost-hunter/
+├── index.html     # Semantic HTML5 structure & UI overlays
+├── style.css      # Advanced CSS3 with neon variables & glassmorphism
+├── game.js        # Core Engine: Canvas render, Physics, & Audio Synthesis
+├── favicon.png    # Spectral Ghost branded icon
+└── README.md      # You are here!
+```
+
+---
+
 ## 🚀 Getting Started
 
 No heavy frameworks. No bulky dependencies. Pure web performance.
@@ -70,27 +92,6 @@ No heavy frameworks. No bulky dependencies. Pure web performance.
 
 ---
 
-## 🎧 Audio Engine Deep-Dive
-
-The audio in Ghost Hunter is **100% synthesized in real-time**. We do not use static MP3 samples for combat.
-- **Blade Loop**: A continuous speed-sensitive oscillator that shifts in pitch and volume based on your mouse velocity.
-- **Thematic Synthesis**: The `getBladeAudioProfile` function defines the "soul" of each blade, manipulating oscillator types, resonance (Q), and gain envelopes on the fly.
-- **Autoplay Handling**: Implements a global "Unlock Audio" listener to comply with modern browser security while ensuring a seamless experience.
-
----
-
-## 📂 Project Structure
-
-```text
-ghost-hunter/
-├── index.html     # Semantic HTML5 structure & UI overlays
-├── style.css     # Advanced CSS3 with neon variables & glassmorphism
-├── game.js      # Core Engine: Canvas render, Physics, & Audio Synthesis
-└── README.md    # You are here!
-```
-
----
-
 <p align="center">
   Built with ❤️ for the Ethereal Hunters. 👻
-</p>
+</p> 
