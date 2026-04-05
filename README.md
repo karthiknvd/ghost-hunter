@@ -10,6 +10,11 @@ Ghost Hunter is a high-fidelity, rhythm-based arcade slasher built entirely with
 
 ---
 
+## 🎮 Wanna Play?
+Jump straight into the action at **[ghost-hunter.vercel.app](https://ghost-hunter.vercel.app)**
+
+---
+
 ## 🌟 Key Features
 
 ### ⚔️ The Spectrum System
@@ -61,7 +66,7 @@ No heavy frameworks. No bulky dependencies. Pure web performance.
    ```
 
 3. **Hunt the Ghosts**
-   Open **[ghost-hunter.vercel.app](https://ghost-hunter.vercel.app)** in your favorite modern browser (Chrome/Edge recommended).
+   Open `http://localhost:8000` in your favorite modern browser (Chrome/Edge recommended).
 
 ---
 
