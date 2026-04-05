@@ -11,7 +11,7 @@ Ghost Hunter is a high-fidelity, rhythm-based arcade slasher built entirely with
 ---
 
 ## 🎮 Wanna Play?
-Jump straight into the action at **[ghost-hunter.vercel.app](https://ghost-hunter.vercel.app)**
+Jump straight into the action at **[ghosthunter-game.vercel.app](https://ghosthunter-game.vercel.app)**
 
 ---
 
