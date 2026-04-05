@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Ghost Hunter</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- MAIN MENU -->
+  <div id="mainMenu" class="screen active">
+    <!-- Atmospheric Layers -->
+    <div class="menu-bg-ghosts" id="menuBgGhosts"></div>
+    <div class="fog-layer"></div>
+    <div class="cursor-glow" id="menuCursorGlow"></div>
+    
+    <div class="menu-content">
+      <div class="title-wrap" id="menuTitleWrap">
+        <h1 class="game-title">GHOST<br><span>HUNTER</span></h1>
+        <div class="title-glow"></div>
+        <div class="title-particles"></div>
+      </div>
+      
+      <div class="menu-buttons">
+        <button class="btn btn-primary" id="btnPlay">▶ PLAY</button>
+        <button class="btn btn-accent" id="btnSpectrumMenu">✦ SPECTRUM</button>
+        <button class="btn btn-secondary" id="btnSettings">⚙ SETTINGS</button>
+        <button class="btn btn-ghostly" id="btnHowToPlay">❓ HOW TO PLAY</button>
+      </div>
+      
+      <div class="menu-footer">
+        <div class="footer-line"></div>
+        <p class="version-tag">v1.0 — Arcade Edition</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIRST TIME TUTORIAL OVERLAY -->
+  <div id="tutorialOverlay" class="screen hidden">
+    <div class="tutorial-box">
+      <h2 class="neon-heading">HOW TO PLAY</h2>
+      <div class="tut-items">
+        <div class="tut-item">
+          <span class="tut-icon">👻</span>
+          <p><strong>Slice Ghosts</strong> to score points</p>
+        </div>
+        <div class="tut-item">
+          <span class="tut-icon">🧍</span>
+          <p><strong>Avoid Humans</strong> — instant game over!</p>
+        </div>
+        <div class="tut-item">
+          <span class="tut-icon">💀</span>
+          <p><strong>Don't Miss Ghosts</strong> — limit depends on mode!</p>
+        </div>
+        <div class="tut-item">
+          <span class="tut-icon">🔥</span>
+          <p><strong>Boss Ghosts</strong> trigger FRENZY mode!</p>
+        </div>
+      </div>
+      <div class="tut-buttons">
+        <button class="btn btn-primary" id="btnTutOk">LET'S GO!</button>
+        <button class="btn btn-danger" id="btnTutBack">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPECTRUM CUSTOMIZATION MENU -->
+  <div id="spectrumMenu" class="screen hidden">
+    <div class="spectrum-box">
+      <h2 class="neon-heading">BLADE ESSENCE</h2>
+      <p class="spectrum-subtitle">Choose your spiritual energy</p>
+      
+      <div class="color-premium-grid" id="premiumColorGrid">
+        <div class="color-card active" data-color="#ffffff">
+          <div class="color-preview" style="background: #ffffff; box-shadow: 0 0 15px #ffffff;"></div>
+          <span class="color-name">Purity White</span>
+        </div>
+        <div class="color-card" data-color="#00ffff">
+          <div class="color-preview" style="background: #00ffff; box-shadow: 0 0 15px #00ffff;"></div>
+          <span class="color-name">Cyber Cyan</span>
+        </div>
+        <div class="color-card" data-color="#ff4488">
+          <div class="color-preview" style="background: #ff4488; box-shadow: 0 0 15px #ff4488;"></div>
+          <span class="color-name">Phantom Pink</span>
+        </div>
+        <div class="color-card" data-color="#ff6600">
+          <div class="color-preview" style="background: #ff6600; box-shadow: 0 0 15px #ff6600;"></div>
+          <span class="color-name">Soul Orange</span>
+        </div>
+        <div class="color-card" data-color="#aa44ff">
+          <div class="color-preview" style="background: #aa44ff; box-shadow: 0 0 15px #aa44ff;"></div>
+          <span class="color-name">Mystic Purple</span>
+        </div>
+        <div class="color-card" data-color="#44ff88">
+          <div class="color-preview" style="background: #44ff88; box-shadow: 0 0 15px #44ff88;"></div>
+          <span class="color-name">Ecto Green</span>
+        </div>
+      </div>
+
+      <button class="btn btn-secondary" id="btnSpectrumBack">← BACK</button>
+    </div>
+  </div>
+
+  <!-- SETTINGS MENU -->
+  <div id="settingsMenu" class="screen hidden">
+    <div class="settings-box">
+      <h2 class="neon-heading">SETTINGS</h2>
+      <div class="settings-group">
+        <label>Music <span class="toggle-wrap"><input type="checkbox" id="musicToggle" checked /><span
+              class="toggle-slider"></span></span></label>
+        <div class="slider-wrap">
+          <input type="range" id="musicVol" min="0" max="100" value="60" class="vol-slider" />
+          <span id="musicVolVal">60%</span>
+        </div>
+      </div>
+      <div class="settings-group">
+        <label>SFX <span class="toggle-wrap"><input type="checkbox" id="sfxToggle" checked /><span
+              class="toggle-slider"></span></span></label>
+        <div class="slider-wrap">
+          <input type="range" id="sfxVol" min="0" max="100" value="80" class="vol-slider" />
+          <span id="sfxVolVal">80%</span>
+        </div>
+      </div>
+      <button class="btn btn-secondary" id="btnSettingsBack">← BACK</button>
+    </div>
+  </div>
+
+  <!-- DIFFICULTY MENU -->
+  <div id="difficultyMenu" class="screen hidden">
+    <div class="difficulty-box">
+      <h2 class="neon-heading">CHOOSE MODE</h2>
+      <div class="difficulty-grid">
+        <div class="diff-card easy" id="btnDiffEasy">
+          <div class="card-icon">👻</div>
+          <div class="card-content">
+            <h3 class="card-title">EASY</h3>
+            <p class="card-info">Missed ghosts are ignored.</p>
+            <span class="card-best" id="bestEasy">BEST: 0</span>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+
+        <div class="diff-card regular" id="btnDiffRegular">
+          <div class="card-icon">💀</div>
+          <div class="card-content">
+            <h3 class="card-title">REGULAR</h3>
+            <p class="card-info">The classic 3-life challenge.</p>
+            <span class="card-best" id="bestRegular">BEST: 0</span>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+
+        <div class="diff-card hard" id="btnDiffHard">
+          <div class="card-icon">🔥</div>
+          <div class="card-content">
+            <h3 class="card-title">HARD</h3>
+            <p class="card-info">One ghost miss = Game Over!</p>
+            <span class="card-best" id="bestHard">BEST: 0</span>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+      </div>
+      <button class="btn btn-ghost" id="btnDiffBack">← BACK TO MENU</button>
+    </div>
+  </div>
+
+  <!-- HUD (in-game) -->
+  <div id="hud" class="hidden">
+    <div class="hud-left">
+      <div class="hud-misses" id="hudMisses">
+        <span class="miss-icon">💀</span><span class="miss-icon">💀</span><span class="miss-icon">💀</span>
+      </div>
+    </div>
+    <div class="hud-center" id="hudBossBar" style="display:none">
+      <div class="boss-label">BOSS</div>
+      <div class="boss-bar-bg">
+        <div class="boss-bar-fill" id="bossBarFill"></div>
+      </div>
+    </div>
+    <div class="hud-right">
+      <div class="hud-score" id="hudScore">0</div>
+      <div class="hud-hi" id="hudHi">HI: 0</div>
+    </div>
+    <button class="pause-btn" id="btnPause">⏸</button>
+  </div>
+
+  <!-- CANVAS -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- PAUSE MENU -->
+  <div id="pauseMenu" class="screen hidden">
+    <div class="pause-box">
+      <h2 class="neon-heading">PAUSED</h2>
+      <button class="btn btn-primary" id="btnResume">▶ RESUME</button>
+      <button class="btn btn-secondary" id="btnPauseMuteMusic">🎵 MUTE MUSIC</button>
+      <button class="btn btn-secondary" id="btnPauseMuteSFX">🔊 MUTE SFX</button>
+      <button class="btn btn-ghost" id="btnPauseExit">← MAIN MENU</button>
+    </div>
+  </div>
+
+  <!-- GAME OVER -->
+  <div id="gameOver" class="screen hidden">
+    <div class="gameover-box">
+      <h2 class="gameover-title">GAME OVER</h2>
+      <div class="go-scores">
+        <div class="go-score-line">SCORE <span id="goScore">0</span></div>
+        <div class="go-score-line hi">BEST &nbsp;<span id="goHi">0</span></div>
+      </div>
+      <div class="go-reason" id="goReason"></div>
+      <div class="go-buttons">
+        <button class="btn btn-primary" id="btnRestart">↺ RESTART</button>
+        <button class="btn btn-ghost" id="btnGoMenu">⌂ MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+
+</html>
